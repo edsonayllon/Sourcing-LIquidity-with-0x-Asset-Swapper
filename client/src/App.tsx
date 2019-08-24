@@ -25,11 +25,9 @@ const App: React.FC = () => {
       // console.log(sell)
       window.ethereum.enable();
 
-      let wei = web3.utils.fromWei('3', 'ether');
-
       let makerTokenAddress = tokenAddresses['DAI'];
       let takerTokenAddress = tokenAddresses['WETH'];
-      let makerAssetBuyAmount = new BigNumber('100000e20');
+      let makerAssetBuyAmount = new BigNumber('10000e18');
 
       const quoter = SwapQuoter.getSwapQuoterForStandardRelayerAPIUrl(
         web3.currentProvider,
