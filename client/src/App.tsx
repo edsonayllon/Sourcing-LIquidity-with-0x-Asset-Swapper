@@ -7,6 +7,7 @@ const Web3 = require('web3');
 
 declare let window: any;
 const web3 = new Web3(Web3.givenProvider);
+// api endpoint found at https://developers.radarrelay.com/api/feed-api/changelog
 const apiUrl = 'https://api.radarrelay.com/0x/v2/';
 const tokenAddresses = {
   DAI: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359',
