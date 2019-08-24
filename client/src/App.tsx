@@ -29,7 +29,7 @@ const App: React.FC = () => {
 
       let makerTokenAddress = tokenAddresses['DAI'];
       let takerTokenAddress = tokenAddresses['WETH'];
-      let makerAssetBuyAmount = new BigNumber(200000);
+      let makerAssetBuyAmount = new BigNumber('100000e20');
 
       const quoter = SwapQuoter.getSwapQuoterForStandardRelayerAPIUrl(
         web3.currentProvider,
@@ -52,6 +52,10 @@ const App: React.FC = () => {
       console.log(quote);
     } catch (err) {
       console.log(err);
+      console.log(err.toString())
+      if (err.toString() === "Error: INSUFFICIENT_ASSET_LIQUIDITY") {
+        console.log('no liquidity = true')
+      }
     }
   }
 
